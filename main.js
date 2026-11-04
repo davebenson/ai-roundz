@@ -35,6 +35,16 @@ world.start([
     fireChance: 0,
     waves: [12, 16, 20].map(length => ({ type: Centipede, length, speed: 1 })),
   }),
+  new Round({ fireChance: 0, waves: [{ count: 8, speed: 1, type: Teleporter }] }),
+  new Round({
+    fireChance: 0,
+    waves: [{ count: 30, speed: 1, type: Boid }, { count: 50, speed: 1.2, type: Boid }],
+  }),
+  new Round({
+    fireChance: 0,
+    waves: [[6, 1], [8, 1.2], [10, 1.4]].map(([count, speed]) => ({ count, speed, type: Boomerang })),
+  }),
+  new Round({ fireChance: 0.02, waves: [{ count: 2, speed: 1, type: FireworkCannon }] }),
 ]);
 
 // R restarts after game over / winning. C starts the round cheat: type a

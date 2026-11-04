@@ -107,6 +107,16 @@ class Sfx {
     this.noise(1.0, { gain: 0.7, filter: 'lowpass', f0: 2000, f1: 60 });
     this.tone('sawtooth', 420, 50, 0.8, 0.25);
   }
+  // A teleporter fading out (falling) or back in (rising).
+  blink(appear) {
+    if (!this.ok('blink', 30)) return;
+    this.tone('sine', appear ? 300 : 1200, appear ? 1200 : 300, 0.15, 0.08);
+  }
+  // A boomerang launching: a short airy sweep.
+  whoosh() {
+    if (!this.ok('whoosh', 80)) return;
+    this.noise(0.4, { gain: 0.2, filter: 'bandpass', f0: 400, f1: 1800, q: 3 });
+  }
   pop() {
     if (!this.ok('pop', 40)) return;
     this.tone('sine', 900, 200, 0.1, 0.25);

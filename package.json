@@ -1,0 +1,5 @@
+{
+  "name": "ai-roundz",
+  "private": true,
+  "scripts": { "test": "node --test" }
+}

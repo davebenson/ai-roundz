@@ -34,7 +34,7 @@ class EnemyBullet extends GameObject {
 // A little round bullet.
 class OrbBullet extends EnemyBullet {
   draw(ctx) {
-    ctx.fillStyle = '#f8f';
+    ctx.fillStyle = this.color ?? '#f8f';
     ctx.beginPath();
     ctx.arc(this.x, this.y, 4, 0, Math.PI * 2);
     ctx.fill();
